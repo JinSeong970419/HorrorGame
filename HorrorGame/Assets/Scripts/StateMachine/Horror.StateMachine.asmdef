@@ -1,3 +1,16 @@
 {
-	"name": "Horror.StateMachine"
+    "name": "Horror.StateMachine",
+    "rootNamespace": "Horror.StateMachine",
+    "references": [
+        "GUID:55cfa469d22817d4f8487e77ed91d334"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

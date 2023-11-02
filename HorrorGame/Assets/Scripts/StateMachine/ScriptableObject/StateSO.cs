@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Horror.StateMachine.ScriptableObjects
 {
+    [CreateAssetMenu(fileName = "New State", menuName = "State Machines/State")]
     public class StateSO : ScriptableObject
     {
         [SerializeField] private StateActionSO[] _actions = null;

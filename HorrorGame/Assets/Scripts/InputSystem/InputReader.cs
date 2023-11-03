@@ -9,6 +9,7 @@ namespace Horror
     {
         // PlayerInput
         public event UnityAction<Vector2> MoveEvent = delegate { };
+        public event UnityAction<Vector2, bool> CameraMoveEvent = delegate { };
         public event UnityAction StartedRunning = delegate { };
         public event UnityAction StoppedRunning = delegate { };
 
@@ -53,5 +54,11 @@ namespace Horror
                     break;
             }
         }
+
+        public void OnCameraRotate(InputAction.CallbackContext context)
+        {
+            CameraMoveEvent.Invoke(context.ReadValue<Vector2>(), IsDeviceMouse(context));
+        }
+        private bool IsDeviceMouse(InputAction.CallbackContext context) => context.control.device.name == "Mouse";
     }
 }

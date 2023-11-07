@@ -516,7 +516,7 @@ CapsuleCollider:
   m_Radius: 0.3
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0.9, z: 0}
+  m_Center: {x: 0, y: 1.05, z: 0}
 --- !u!143 &1965681462779065093
 CharacterController:
   m_ObjectHideFlags: 0
@@ -542,7 +542,7 @@ CharacterController:
   m_StepOffset: 0.15
   m_SkinWidth: 0.02
   m_MinMoveDistance: 0.005
-  m_Center: {x: 0, y: 0.9, z: 0}
+  m_Center: {x: 0, y: 1.05, z: 0}
 --- !u!114 &-8410122372070535005
 MonoBehaviour:
   m_ObjectHideFlags: 0

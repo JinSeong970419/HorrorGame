@@ -34,9 +34,8 @@ namespace Horror
         {
             //Transform spawnLocation = GetSpawnLocation();
             Protagonist playerInstance = Instantiate(_playerPrefab, spawnLocation.position, spawnLocation.rotation);
-
-
-            _playerTransformAnchor.Provide(playerInstance.transform); 
+            Transform provideActorPosition = playerInstance.transform.Find("ActorCameraRoot") != null ? playerInstance.transform.Find("ActorCameraRoot") : playerInstance.transform;
+            _playerTransformAnchor.Provide(provideActorPosition); 
         }
 
         //private Transform GetSpawnLocation()

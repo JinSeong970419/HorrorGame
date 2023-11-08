@@ -193,7 +193,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""id"": ""8a8a4df3-cbbb-4017-91be-1f32b776555d"",
                     ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
-                    ""processors"": ""ScaleVector2"",
+                    ""processors"": ""InvertVector2(invertX=false),ScaleVector2(x=0.05,y=0.05)"",
                     ""groups"": ""PC"",
                     ""action"": ""CameraRotate"",
                     ""isComposite"": false,

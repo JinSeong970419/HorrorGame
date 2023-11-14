@@ -20,7 +20,7 @@ namespace Horror
 
         public override void OnUpdate()
         {
-            _characterController.Move(_protagonist.movementVector * Time.deltaTime);
+            _characterController.Move(_protagonist.transform.TransformDirection(_protagonist.movementVector) * Time.deltaTime);
             _protagonist.movementVector = _characterController.velocity;
         }
     }

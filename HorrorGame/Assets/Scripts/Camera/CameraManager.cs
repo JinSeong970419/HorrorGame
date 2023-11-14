@@ -1,7 +1,5 @@
 using Cinemachine;
 using UnityEngine;
-using static Unity.Burst.Intrinsics.X86;
-using static UnityEditor.PlayerSettings;
 
 namespace Horror
 {
@@ -26,6 +24,9 @@ namespace Horror
             _cameraTransformAnchor.Provide(mainCamera.transform);
 
             callActor.AddListener(Test);
+
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
 
         private void OnDisable()
@@ -36,6 +37,9 @@ namespace Horror
             _cameraTransformAnchor.UnSet();
 
             callActor.RemoveListener(Test);
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
 
         private void Test()
@@ -57,11 +61,11 @@ namespace Horror
 
             _rotationVelocity = cameraMovement.x * deviceMultiplier * _speedMultiplier;
 
-            _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, -90f, 90f);
+            _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, -80f, 80f);
 
             _protagonistTransformAnchor.Value.localRotation = Quaternion.Euler(_cinemachineTargetPitch, 0.0f, 0.0f);
-
-            _protagonistTransformAnchor.Value.gameObject.GetComponentInParent<Protagonist>().transform.Rotate(Vector3.up * _rotationVelocity);
+            //_protagonistTransformAnchor.Value.gameObject.GetComponentInParent<Protagonist>().transform.eulerAngles += Vector3.up * _rotationVelocity;
+            _protagonistTransformAnchor.Value.gameObject.GetComponentInParent<Protagonist>().transform.Rotate(0f, cameraMovement.x, 0f);
 
         }
 

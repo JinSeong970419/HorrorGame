@@ -16,16 +16,19 @@ namespace Horror
         // StateMachine Action에 사용되는 값
         [NonSerialized] public Vector3 movementInput;
         [NonSerialized] public Vector3 movementVector;
+        [NonSerialized] public Vector2 camreaVector;
         [NonSerialized] public bool isRunning;
 
         private void OnEnable()
         {
             _inputReader.MoveEvent += OnMove;
+            _inputReader.CameraMoveEvent += OnCamera;
         }
 
         private void OnDisable()
         {
             _inputReader.MoveEvent -= OnMove;
+            _inputReader.CameraMoveEvent -= OnCamera;
         }
 
         private void Update()
@@ -59,6 +62,11 @@ namespace Horror
         #region Event PlayerInput
         // Event PlayerInput
         private void OnMove(Vector2 movement) { _inputVector = movement; }
+
+        private void OnCamera(Vector2 cameraMovement, bool isDeviceMouse)
+        {
+            camreaVector = cameraMovement;
+        }
         #endregion
     }
 }

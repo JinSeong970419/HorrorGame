@@ -1,22 +1,26 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Horror
 {
     public class SpawnSystem : MonoBehaviour
     {
+        [Header("Spawn References")]
         [SerializeField] private TransformAnchor _playerTransformAnchor;
         [SerializeField] private Protagonist _playerPrefab;
+        [SerializeField] private PathStorageSO _pathTaken;
 
         [Header("Scene Player Spawn")]
         [SerializeField] private GameEventVoid _onCallSpawn;
 
-        [SerializeField] private Transform spawnLocation;
+        private LocationEntrance[] _spawnLocations;
+        private Transform _defaultSpawnPoint;
 
         private void Awake()
         {
+            //_spawnLocations = GameObject.FindObjectsOfType<LocationEntrance>();
+            _spawnLocations = GameObject.FindObjectsByType<LocationEntrance>(FindObjectsSortMode.None);
+            _defaultSpawnPoint = transform.GetChild(0);
         }
 
         private void OnEnable()
@@ -32,28 +36,27 @@ namespace Horror
 
         private void SpawnPlayer()
         {
-            //Transform spawnLocation = GetSpawnLocation();
+            Transform spawnLocation = GetSpawnLocation();
             Protagonist playerInstance = Instantiate(_playerPrefab, spawnLocation.position, spawnLocation.rotation);
             Transform provideActorPosition = playerInstance.transform.Find("ActorCameraRoot") != null ? playerInstance.transform.Find("ActorCameraRoot") : playerInstance.transform;
             _playerTransformAnchor.Provide(provideActorPosition); 
         }
 
-        //private Transform GetSpawnLocation()
-        //{
-        //    if (_pathTaken == null)
-        //        return _defaultSpawnPoint;
+        private Transform GetSpawnLocation()
+        {
+            if (_pathTaken == null)
+                return _defaultSpawnPoint;
 
-        //    //Look for the element in the available LocationEntries that matches tha last PathSO taken
-        //    int entranceIndex = Array.FindIndex(_spawnLocations, element =>
-        //        element.EntrancePath == _pathTaken.lastPathTaken);
+            //사용 가능한 위치 항목에서 마지막으로 선택한 경로와 일치여부 확인
+            int entranceIndex = Array.FindIndex(_spawnLocations, element => element.EntrancePath == _pathTaken.lastPathTaken);
 
-        //    if (entranceIndex == -1)
-        //    {
-        //        Debug.LogWarning("The player tried to spawn in an LocationEntry that doesn't exist, returning the default one.");
-        //        return _defaultSpawnPoint;
-        //    }
-        //    else
-        //        return _spawnLocations[entranceIndex].transform;
-        //}
+            if (entranceIndex == -1)
+            {
+                Debug.LogWarning("플레이어가 지정되지 않은 위치에 스폰을 시도하여 기본 위치를 반환.");
+                return _defaultSpawnPoint;
+            }
+            else
+                return _spawnLocations[entranceIndex].transform;
+        }
     }
 }

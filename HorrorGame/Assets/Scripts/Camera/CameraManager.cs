@@ -47,7 +47,7 @@ namespace Horror
             test = true;
         }
 
-        private float _rotationVelocity;
+        //private float _rotationVelocity;
 
         float _cinemachineTargetPitch = 0;
         private void OnCameraMove(Vector2 cameraMovement, bool isDeviceMouse)
@@ -59,12 +59,11 @@ namespace Horror
 
             _cinemachineTargetPitch += cameraMovement.y * deviceMultiplier * _speedMultiplier;
 
-            _rotationVelocity = cameraMovement.x * deviceMultiplier * _speedMultiplier;
+            //_rotationVelocity = cameraMovement.x * deviceMultiplier * _speedMultiplier;
 
-            _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, -80f, 80f);
+            _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, -80f, 60f);
 
             _protagonistTransformAnchor.Value.localRotation = Quaternion.Euler(_cinemachineTargetPitch, 0.0f, 0.0f);
-            //_protagonistTransformAnchor.Value.gameObject.GetComponentInParent<Protagonist>().transform.eulerAngles += Vector3.up * _rotationVelocity;
             _protagonistTransformAnchor.Value.gameObject.GetComponentInParent<Protagonist>().transform.Rotate(0f, cameraMovement.x, 0f);
 
         }

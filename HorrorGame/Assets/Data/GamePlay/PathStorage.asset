@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec435060b2c6a924eacefbd9050a7e57, type: 3}
   m_Name: PathStorage
   m_EditorClassIdentifier: 
-  description: 
+  description: "\uACBD\uB85C \uC800\uC7A5"
   lastPathTaken: {fileID: 0}

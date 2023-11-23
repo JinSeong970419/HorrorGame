@@ -52,7 +52,7 @@ namespace Horror
 
             if (entranceIndex == -1)
             {
-                Debug.LogWarning("플레이어가 지정되지 않은 위치에 스폰을 시도하여 기본 위치를 반환.");
+                Debug.LogWarning("플레이어의 위치가 지정되지 않아 Deafult Sapwn을 진행");
                 return _defaultSpawnPoint;
             }
             else

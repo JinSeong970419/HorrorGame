@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53534ca46b1dea04e95059f691a33e95, type: 3}
   m_Name: Player Transform
   m_EditorClassIdentifier: 
-  description: 
+  description: "\uD50C\uB808\uC774\uC5B4 \uC704\uCE58 \uB370\uC774\uD130"
   isSet: 0
   _value: {fileID: 0}

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: LocationScenes
+  m_EditorClassIdentifier: 
+  m_GroupName: LocationScenes
+  m_Data:
+    m_SerializedData: []
+  m_GUID: f0e06a6591f9bde4fa2a87fe5623b5ac
+  m_SerializeEntries:
+  - m_GUID: e544720df8f7e724d91f76f72dacd043
+    m_Address: Assets/Scenes/HorrorHouse.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 575d40a84c1bf5a438ff6ea5f9350e6b, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 413afb39f12342d41b5e9c8857609f43, type: 2}
+    - {fileID: 11400000, guid: d1490e6a372aaa6449c299592177719e, type: 2}

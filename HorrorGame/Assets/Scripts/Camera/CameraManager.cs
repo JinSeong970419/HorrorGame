@@ -15,6 +15,8 @@ namespace Horror
         [SerializeField] private TransformAnchor _protagonistTransformAnchor;
 
         [SerializeField] private GameEventVoid callActor;
+
+        private float _cinemachineTargetPitch = 0;
         bool test = false;
 
         private void OnEnable()
@@ -47,9 +49,7 @@ namespace Horror
             test = true;
         }
 
-        //private float _rotationVelocity;
-
-        float _cinemachineTargetPitch = 0;
+        
         private void OnCameraMove(Vector2 cameraMovement, bool isDeviceMouse)
         {
             if (!test)
@@ -58,8 +58,6 @@ namespace Horror
             float deviceMultiplier = isDeviceMouse ? 1f : Time.deltaTime;
 
             _cinemachineTargetPitch += cameraMovement.y * deviceMultiplier * _speedMultiplier;
-
-            //_rotationVelocity = cameraMovement.x * deviceMultiplier * _speedMultiplier;
 
             _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, -80f, 60f);
 

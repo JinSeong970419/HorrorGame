@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53534ca46b1dea04e95059f691a33e95, type: 3}
   m_Name: GamePlayCamera Transform
   m_EditorClassIdentifier: 
-  description: 
+  description: "\uC778\uAC8C\uC784\uC0C1 \uD50C\uB808\uC774\uC5B4\uB97C \uB530\uB77C
+    \uB2E4\uB2C8\uB294 \uCE74\uBA54\uB77C \uB370\uC774\uD130"
   isSet: 0
   _value: {fileID: 0}

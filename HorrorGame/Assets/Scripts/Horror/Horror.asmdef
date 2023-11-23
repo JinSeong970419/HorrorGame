@@ -1,0 +1,21 @@
+{
+    "name": "Horror",
+    "rootNamespace": "Horror",
+    "references": [
+        "Unity.InputSystem",
+        "Cinemachine",
+        "Unity.Addressables",
+        "Unity.ResourceManager",
+        "Horror.Pool",
+        "Horror.Factory"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

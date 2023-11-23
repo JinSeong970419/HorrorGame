@@ -1,0 +1,16 @@
+{
+    "name": "Horror.Pool",
+    "rootNamespace": "Horror.Pool",
+    "references": [
+        "GUID:a6e6e68b1d2ae9a4da33fadb00d8c549"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -37,6 +37,9 @@ namespace Horror.Pool
             }
         }
 
+        /// <summary>
+        /// Pool 활성화
+        /// </summary>
         public override T Request()
         {
             T member = base.Request();
@@ -44,6 +47,9 @@ namespace Horror.Pool
             return member;
         }
 
+        /// <summary>
+        /// Pool 반납
+        /// </summary>
         public override void Return(T member)
         {
             member.transform.SetParent(PoolRoot.transform);
@@ -51,6 +57,9 @@ namespace Horror.Pool
             base.Return(member);
         }
 
+        /// <summary>
+        /// Pool 생성
+        /// </summary>
         protected override T Create()
         {
             T newMember = base.Create();

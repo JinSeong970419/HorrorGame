@@ -48,5 +48,13 @@ MonoBehaviour:
   _initialSize: 10
   audioMixer: {fileID: 24100000, guid: 47f6bd63f1e31a24b98bee8cf0b4e8da, type: 2}
   _masterVolume: 1
-  _musicVolume: 1
+  _musicVolume: 0.8
   _sfxVolume: 1
+  _SFXEventSignal: {fileID: 11400000, guid: bd23611b8388a114094d4cb57557ce44, type: 2}
+  _musicEventSignal: {fileID: 11400000, guid: 63616900b8964e44ab222b2074e358c4, type: 2}
+  _SFXVolumeEventFloat: {fileID: 11400000, guid: 54ba81e67ab45124d93b014b55bc19cc,
+    type: 2}
+  _musicVolumeEventFloat: {fileID: 11400000, guid: 4de7dfc3cf5379e4fabcf2150f028992,
+    type: 2}
+  _masterVolumeEventFloat: {fileID: 11400000, guid: 5dcfce93122e5ff40aa0969dde434687,
+    type: 2}

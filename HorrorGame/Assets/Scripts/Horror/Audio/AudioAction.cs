@@ -35,10 +35,10 @@ namespace Horror
             yield return new WaitForSeconds(1f);
 
             if (_playOnStart)
-                PlayAudioCue();
+                PlayAudioSignal();
         }
 
-        public void PlayAudioCue()
+        public void PlayAudioSignal()
         {
             controlKey = _audioSFXEvent.Invoke(_audioSignal, transform.position);
         }

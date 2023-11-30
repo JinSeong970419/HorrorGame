@@ -32,7 +32,7 @@ namespace Horror
             RandomNoImmediateRepeat,
             Sequential,
         }
-
+        
         public SequenceMode sequenceMode = SequenceMode.RandomNoImmediateRepeat;
         public AudioClip[] audioClips;
 

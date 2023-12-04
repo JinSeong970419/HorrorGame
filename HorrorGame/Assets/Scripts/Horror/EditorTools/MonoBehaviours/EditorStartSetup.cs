@@ -39,11 +39,11 @@ namespace Horror
         {
             if (isColdStart)
             {
-                _persistentManagersSO.sceneReference.LoadSceneAsync(LoadSceneMode.Additive, true).Completed += LoadEventChannel;
+                _persistentManagersSO.sceneReference.LoadSceneAsync(LoadSceneMode.Additive, true).Completed += LoadSceneEvent;
             }
         }
 
-        private void LoadEventChannel(AsyncOperationHandle<SceneInstance> obj)
+        private void LoadSceneEvent(AsyncOperationHandle<SceneInstance> obj)
         {
             _notifyStartupEvent.LoadAssetAsync<LoadGameEvent>().Completed += OnNotifyChannelLoaded;
         }

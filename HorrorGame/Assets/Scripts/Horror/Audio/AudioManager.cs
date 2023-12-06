@@ -125,7 +125,7 @@ namespace Horror
         /// <summary>
         /// Pool에서 SoundEmitter 요청 및 Audio 재생
         /// </summary>
-        public AudioSignalKey PlayAudioSignal(AudioSignalSO audioSignal, Vector3 position = default)
+        public AudioSignalKey PlayAudioSignal(AudioSignalSO audioSignal, AudioConfigurationSO settings, Vector3 position = default)
         {
             AudioClip[] clipsPlay = audioSignal.GetClips();
             SoundEmitter[] soundEmitterArray = new SoundEmitter[clipsPlay.Length];
@@ -136,7 +136,7 @@ namespace Horror
                 soundEmitterArray[i] = _pool.Request();
                 if (soundEmitterArray[i] != null)
                 {
-                    soundEmitterArray[i].PlayAudioClip(clipsPlay[i], audioSignal.looping, position);
+                    soundEmitterArray[i].PlayAudioClip(clipsPlay[i], settings, audioSignal.looping, position);
                     if (!audioSignal.looping)
                         soundEmitterArray[i].OnSoundFinishedPlaying += OnSoundEmitterFinishedPlay;
                 }
@@ -182,7 +182,7 @@ namespace Horror
             return isFound;
         }
 
-        private AudioSignalKey PlayMusicTrack(AudioSignalSO audioSignal, Vector3 PosigionInSpace)
+        private AudioSignalKey PlayMusicTrack(AudioSignalSO audioSignal, AudioConfigurationSO settings, Vector3 PosigionInSpace)
         {
             float fadeDuration = 2f;
             float startTime = 0f;
@@ -198,7 +198,7 @@ namespace Horror
             }
 
             _musicSoundEmitter = _pool.Request();
-            _musicSoundEmitter.FadeMusicIn(audioSignal.GetClips()[0], 1f, startTime);
+            _musicSoundEmitter.FadeMusicIn(audioSignal.GetClips()[0], settings, 1f, startTime);
             _musicSoundEmitter.OnSoundFinishedPlaying += StopMusicEmitter;
 
             return AudioSignalKey.initialize;

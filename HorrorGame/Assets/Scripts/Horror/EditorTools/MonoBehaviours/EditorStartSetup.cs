@@ -17,7 +17,7 @@ namespace Horror
         [SerializeField] private AssetReference _notifyStartupEvent;
 
         [Header("Call Event")]
-        [SerializeField] private GameEventVoid _onCallPlayer;
+        [SerializeField] private GameEventVoid _onCallSpawn;
 
         [Header("Path Storage")]
         [SerializeField] private PathStorageSO _pathStorage;
@@ -58,7 +58,7 @@ namespace Horror
             {
                 // 현재 씬 정보 없이 플레이어 호출
                 // 어떤 씬에 존재하는 지 알 수 없음
-                _onCallPlayer.Invoke();
+                _onCallSpawn.Invoke();
             }
         }
 #endif

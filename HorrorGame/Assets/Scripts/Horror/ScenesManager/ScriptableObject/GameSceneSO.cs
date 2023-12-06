@@ -24,5 +24,6 @@ namespace Horror
 
         public GameSceneType sceneType;
         public AssetReference sceneReference; // 호출할 씬
+        public AudioSignalSO musicTrack;
     }
 }

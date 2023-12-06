@@ -14,6 +14,7 @@ namespace Horror
 
         [Header("Configuration")]
         [SerializeField] private GameEventAudioSignal _audioSFXEvent;
+        [SerializeField] private AudioConfigurationSO _audioConfiguration;
 
         private AudioSignalKey controlKey = AudioSignalKey.initialize;
 
@@ -40,7 +41,7 @@ namespace Horror
 
         public void PlayAudioSignal()
         {
-            controlKey = _audioSFXEvent.Invoke(_audioSignal, transform.position);
+            controlKey = _audioSFXEvent.Invoke(_audioSignal, _audioConfiguration, transform.position);
         }
 
         public void StopAudioSignal()

@@ -25,13 +25,14 @@ namespace Horror
         /// <param name="clip">재생할 오디오 클립</param>
         /// <param name="hasToLoop">반복 여부</param>
         /// <param name="position">재생 위치</param>
-        public void PlayAudioClip(AudioClip clip, bool hasToLoop, Vector3 position = default)
+        public void PlayAudioClip(AudioClip clip, AudioConfigurationSO settings,bool hasToLoop, Vector3 position = default)
         {
             _audioSource.clip = clip;
             _audioSource.transform.position = position;
             _audioSource.loop = hasToLoop;
             _audioSource.time = 0f; // 타임 재설정
             _audioSource.Play();
+            settings.ApplyAudioSetting(_audioSource);
 
             if (!hasToLoop)
             {
@@ -47,9 +48,9 @@ namespace Horror
         #endregion
 
         #region Fade
-        public void FadeMusicIn(AudioClip musicClip, float duration, float startTime = 0f)
+        public void FadeMusicIn(AudioClip musicClip, AudioConfigurationSO settings, float duration, float startTime = 0f)
         {
-            PlayAudioClip(musicClip, true);
+            PlayAudioClip(musicClip, settings, true);
             _audioSource.volume = 0f;
 
             // 음악 전환 시 Fade 효과 적용

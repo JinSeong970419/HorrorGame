@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Horror
 {
-    public delegate AudioSignalKey AudioSignalPlayAction(AudioSignalSO audioCue, Vector3 positionInSpace);
+    public delegate AudioSignalKey AudioSignalPlayAction(AudioSignalSO audioCue, AudioConfigurationSO settings, Vector3 positionInSpace);
     public delegate bool AudioSignalStopAction(AudioSignalKey emitterKey);
     public delegate bool AudioSignalFinishAction(AudioSignalKey emitterKey);
 
@@ -16,13 +16,13 @@ namespace Horror
         public AudioSignalStopAction OnAudioSignalStop;
         public AudioSignalFinishAction OnAudioSignalFinish;
 
-        public AudioSignalKey Invoke(AudioSignalSO audioSignal,  Vector3 positionInSpace = default)
+        public AudioSignalKey Invoke(AudioSignalSO audioSignal, AudioConfigurationSO settings, Vector3 positionInSpace = default)
         {
             AudioSignalKey audioSignalKey = AudioSignalKey.initialize;
 
             if (OnAudioSignalPlay != null)
             {
-                audioSignalKey = OnAudioSignalPlay.Invoke(audioSignal, positionInSpace);
+                audioSignalKey = OnAudioSignalPlay.Invoke(audioSignal, settings, positionInSpace);
             }
             else
             {

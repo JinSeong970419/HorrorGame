@@ -23,12 +23,12 @@ MonoBehaviour:
     m_Key: Settings
     m_Metadata:
       m_Items: []
-  - m_Id: 9667432222720
-    m_Key: Test3
+  - m_Id: 13404463907540992
+    m_Key: Guide
     m_Metadata:
       m_Items: []
-  - m_Id: 9667432222721
-    m_Key: Test4
+  - m_Id: 13404463941095424
+    m_Key: Exit
     m_Metadata:
       m_Items: []
   - m_Id: 9667432222722

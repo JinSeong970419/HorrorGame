@@ -18,10 +18,6 @@ MonoBehaviour:
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 9667432222722
-    m_Localized: Test5_en
-    m_Metadata:
-      m_Items: []
   - m_Id: 13023389385822208
     m_Localized: Game Start
     m_Metadata:
@@ -36,6 +32,26 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 13404463941095424
     m_Localized: Exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16368463926595584
+    m_Localized: GAMEPLAY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16368463955955712
+    m_Localized: CONTROLS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16368463955955713
+    m_Localized: AUDIO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16368463955955714
+    m_Localized: VISUALS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16368463955955715
+    m_Localized: LANGUAGE
     m_Metadata:
       m_Items: []
   references:

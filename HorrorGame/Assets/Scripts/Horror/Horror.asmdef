@@ -8,7 +8,10 @@
         "Unity.ResourceManager",
         "Horror.Pool",
         "Horror.Factory",
-        "DOTween.Modules"
+        "DOTween.Modules",
+        "Unity.Localization",
+        "Michsky",
+        "Unity.TextMeshPro"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -31,8 +31,24 @@ MonoBehaviour:
     m_Key: Exit
     m_Metadata:
       m_Items: []
-  - m_Id: 9667432222722
-    m_Key: Test5
+  - m_Id: 16368463926595584
+    m_Key: GamePlay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16368463955955712
+    m_Key: CONTROLS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16368463955955713
+    m_Key: AUDIO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16368463955955714
+    m_Key: VISUALS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16368463955955715
+    m_Key: Language
     m_Metadata:
       m_Items: []
   m_Metadata:

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -64,7 +64,7 @@ namespace Michsky.UI.Dark
         void Start()
         {
             dropdownAnimator = gameObject.GetComponent<Animator>();
-            itemList = itemParent.GetComponent<VerticalLayoutGroup>();
+            //itemList = itemParent.GetComponent<VerticalLayoutGroup>();
             SetupDropdown();
             currentListParent = transform.parent;
 
@@ -75,13 +75,13 @@ namespace Michsky.UI.Dark
 
             if (enableScrollbar == true)
             {
-                itemList.padding.right = 25;
+                //itemList.padding.right = 25;
                 scrollbar.SetActive(true);
             }
 
             else
             {
-                itemList.padding.right = 8;
+                //itemList.padding.right = 8;
                 scrollbar.SetActive(false);
             }
 

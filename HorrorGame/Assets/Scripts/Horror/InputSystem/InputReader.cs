@@ -13,6 +13,11 @@ namespace Horror
         public event UnityAction StartedRunning = delegate { };
         public event UnityAction StoppedRunning = delegate { };
 
+        // Menu
+        public event UnityAction MenuMouseMoveEvent = delegate { };
+        public event UnityAction MoveSelectionEvent = delegate { };
+        public event UnityAction MenuCloseEvent = delegate { };
+
         private PlayerInput _playerInput;
         private void OnEnable()
         {
@@ -60,5 +65,7 @@ namespace Horror
             CameraMoveEvent.Invoke(context.ReadValue<Vector2>(), IsDeviceMouse(context));
         }
         private bool IsDeviceMouse(InputAction.CallbackContext context) => context.control.device.name == "Mouse";
+
+        public bool LeftMouseDown() => Mouse.current.leftButton.isPressed;
     }
 }

@@ -11,6 +11,7 @@ namespace Horror
         [SerializeField][ReadOnly] private GameObject _defaultSelection;
         [SerializeField][ReadOnly] private GameObject _currentSelection;
         [SerializeField][ReadOnly] private GameObject _mouseSelection;
+
         private void OnEnable()
         {
             _inputReader.MenuMouseMoveEvent += HandleMoveCursor;

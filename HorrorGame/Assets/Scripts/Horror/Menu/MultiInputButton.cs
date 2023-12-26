@@ -17,22 +17,23 @@ namespace Horror
             _menuSelectionHandler = transform.root.gameObject.GetComponentInChildren<MenuSelectionHandler>();
         }
 
-        public override void OnPointerEnter(PointerEventData eventData)
-        {
-            _menuSelectionHandler.HandleMouseEnter(gameObject);
-        }
+        //public override void OnPointerEnter(PointerEventData eventData)
+        //{
+        //    //base.OnPointerEnter(eventData);
+        //    _menuSelectionHandler.HandleMouseEnter(gameObject);
+        //}
 
-        public override void OnPointerExit(PointerEventData eventData)
-        {
-            _menuSelectionHandler.HandleMouseExit(gameObject);
-        }
+        //public override void OnPointerExit(PointerEventData eventData)
+        //{
+        //    _menuSelectionHandler.HandleMouseExit(gameObject);
+        //}
 
-        public override void OnSelect(BaseEventData eventData)
-        {
-            IsSelected = true;
-            _menuSelectionHandler.UpdateSelection(gameObject);
-            base.OnSelect(eventData);
-        }
+        //public override void OnSelect(BaseEventData eventData)
+        //{
+        //    IsSelected = true;
+        //    _menuSelectionHandler.UpdateSelection(gameObject);
+        //    base.OnSelect(eventData);
+        //}
 
         public void UpdateSelected()
         {
@@ -42,10 +43,10 @@ namespace Horror
             _menuSelectionHandler.UpdateSelection(gameObject);
         }
 
-        public override void OnSubmit(BaseEventData eventData)
-        {
-            if (_menuSelectionHandler.AllowsSubmit())
-                base.OnSubmit(eventData);
-        }
+        //public override void OnSubmit(BaseEventData eventData)
+        //{
+        //    if (_menuSelectionHandler.AllowsSubmit())
+        //        base.OnSubmit(eventData);
+        //}
     }
 }

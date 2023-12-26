@@ -5,7 +5,7 @@ using UnityEngine.Events;
 namespace Horror
 {
     [CreateAssetMenu(fileName = "InputReader", menuName = "Game/Input Reader")]
-    public class InputReader : DescriptionBaseSO, PlayerInput.IPlayerActions
+    public class InputReader : DescriptionBaseSO, PlayerInput.IPlayerActions, PlayerInput.IMenuActions
     {
         // PlayerInput
         public event UnityAction<Vector2> MoveEvent = delegate { };
@@ -67,5 +67,17 @@ namespace Horror
         private bool IsDeviceMouse(InputAction.CallbackContext context) => context.control.device.name == "Mouse";
 
         public bool LeftMouseDown() => Mouse.current.leftButton.isPressed;
+
+        public void OnMouseMove(InputAction.CallbackContext context)
+        {
+            if (context.phase == InputActionPhase.Performed)
+                MenuMouseMoveEvent.Invoke();
+        }
+
+        public void OnMoveSelection(InputAction.CallbackContext context)
+        {
+            if (context.phase == InputActionPhase.Performed)
+                MoveSelectionEvent.Invoke();
+        }
     }
 }

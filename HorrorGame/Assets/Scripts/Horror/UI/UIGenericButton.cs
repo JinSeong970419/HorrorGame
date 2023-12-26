@@ -2,13 +2,15 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Components;
+using UnityEngine.UI;
 
 namespace Horror
 {
     public class UIGenericButton : MonoBehaviour
     {
         [SerializeField] private LocalizeStringEvent _buttonText;
-        [SerializeField] private MultiInputButton _button;
+        //[SerializeField] private MultiInputButton _button;
+        [SerializeField] private Button _button;
 
         public UnityAction Clicked;
 
@@ -16,15 +18,15 @@ namespace Horror
 
         private void OnDisable()
         {
-            _button.IsSelected = false;
+            //_button.IsSelected = false;
             _isDefaultSelection = false;
         }
 
         public void SetButton(bool isSelect)
         {
             _isDefaultSelection = isSelect;
-            if (isSelect)
-                _button.UpdateSelected();
+            //if (isSelect)
+                //_button.UpdateSelected();
         }
 
         public void SetButton(LocalizedString localizedString, bool isSelected)

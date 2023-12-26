@@ -11,6 +11,7 @@ namespace Horror
         [SerializeField] private GameSceneSO _gameplayScene;
 
         [Header("Listening to")]
+        [SerializeField] private LoadGameEvent _loadLocation;
         [SerializeField] private LoadGameEvent _StartupLocation;
 
         [Header("BroadCasting")]
@@ -31,11 +32,13 @@ namespace Horror
 
         private void OnEnable()
         {
+            _loadLocation.OnLoadingRequested += LoadLocation;
             _StartupLocation.OnLoadingRequested += LocationStartup;
         }
 
         private void OnDisable()
         {
+            _loadLocation.OnLoadingRequested -= LoadLocation;
             _StartupLocation.OnLoadingRequested -= LocationStartup;
         }
 
@@ -79,6 +82,10 @@ namespace Horror
             {
                 _gameplayManagerLoadingOpHandle = _gameplayScene.sceneReference.LoadSceneAsync(LoadSceneMode.Additive, true);
                 _gameplayManagerLoadingOpHandle.Completed += OnGameplayManagersLoaded;
+            }
+            else
+            {
+                StartCoroutine(UnloadPreviousScene());
             }
         }
 

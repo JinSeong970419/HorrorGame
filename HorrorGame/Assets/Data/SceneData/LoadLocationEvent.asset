@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd0ca8a1fa3ab6c4981b67b1acffb7ad, type: 3}
   m_Name: LoadLocationEvent
   m_EditorClassIdentifier: 
-  description: "Editor\uC0C1\uC5D0\uC11C \uC7AC\uC0DD\uD574 Scene \uD638\uCD9C \uC2DC
-    EditorInitializer \uD504\uB9AC\uD339 \uD638\uCD9C"
+  description: "Editor\uC0C1\uC5D0\uC11C \uB610\uB294 RunTime\uC2DC \uC7AC\uC0DD\uD574
+    Scene \uD638\uCD9C \uC2DC EditorInitializer \uD504\uB9AC\uD339 \uD638\uCD9C"
+  _guid: a405a3045e554204eb301f68f55d2d41

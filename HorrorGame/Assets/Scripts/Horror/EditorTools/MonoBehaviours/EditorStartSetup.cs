@@ -22,6 +22,9 @@ namespace Horror
         [Header("Path Storage")]
         [SerializeField] private PathStorageSO _pathStorage;
 
+        [Header("Save System")]
+        [SerializeField] private SaveSystem _saveSystem;
+
         private bool isColdStart = false;
 
         private void Awake()
@@ -41,6 +44,7 @@ namespace Horror
             {
                 _persistentManagersSO.sceneReference.LoadSceneAsync(LoadSceneMode.Additive, true).Completed += LoadSceneEvent;
             }
+            CreateSaveFileIfNotPresent();
         }
 
         private void LoadSceneEvent(AsyncOperationHandle<SceneInstance> obj)
@@ -59,6 +63,14 @@ namespace Horror
                 // 현재 씬 정보 없이 플레이어 호출
                 // 어떤 씬에 존재하는 지 알 수 없음
                 _onCallSpawn.Invoke();
+            }
+        }
+
+        private void CreateSaveFileIfNotPresent()
+        {
+            if (_saveSystem != null && !_saveSystem.LoadSaveDataFromDisk())
+            {
+                _saveSystem.SetNewGameData();
             }
         }
 #endif

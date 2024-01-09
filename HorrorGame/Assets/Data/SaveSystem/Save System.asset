@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185b2f3c197b4994b91f22ab0fa3c394, type: 3}
+  m_Name: Save System
+  m_EditorClassIdentifier: 
+  _saveSettingsEvent: {fileID: 11400000, guid: d04bf79cf18cb714192031f5e322f8dc, type: 2}
+  _loadLocation: {fileID: 11400000, guid: a405a3045e554204eb301f68f55d2d41, type: 2}
+  _currentSettings: {fileID: 11400000, guid: 8dd68e7b829370e44ae3101b3d849de6, type: 2}
+  saveFilename: save.HorrorGame
+  backupSaveFilename: save.HorrorGame.bak
+  saveData:
+    _locationId: 
+    _masterVolume: 0
+    _musicVolume: 0
+    _sfxVolume: 0

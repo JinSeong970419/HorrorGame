@@ -133,6 +133,7 @@ namespace Horror
             }
 
             _loadingOperationHandle = _sceneLoad.sceneReference.LoadSceneAsync(LoadSceneMode.Additive, true, 0);
+            Debug.Log(_loadingOperationHandle.PercentComplete);
             _loadingOperationHandle.Completed += OnNewSceneLoaded;
         }
 

@@ -11,7 +11,7 @@ namespace Horror
     public enum SettingFieldType
     {
         Language,
-        Volume_SFx,
+        Volume_SFX,
         Volume_Music,
         Resolution,
         FullScreen,

@@ -54,6 +54,18 @@ MonoBehaviour:
     m_Localized: LANGUAGE
     m_Metadata:
       m_Items: []
+  - m_Id: 24924222461382656
+    m_Localized: Master Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24924222503325696
+    m_Localized: Music Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24924222503325697
+    m_Localized: Sound FX
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

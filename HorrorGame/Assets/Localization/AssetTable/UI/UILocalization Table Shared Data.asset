@@ -51,6 +51,18 @@ MonoBehaviour:
     m_Key: Language
     m_Metadata:
       m_Items: []
+  - m_Id: 24924222461382656
+    m_Key: Volume_Master
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24924222503325696
+    m_Key: Volume_Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24924222503325697
+    m_Key: Volume_SFX
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

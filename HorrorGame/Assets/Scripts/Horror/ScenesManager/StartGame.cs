@@ -18,8 +18,8 @@ namespace Horror
         
         private void Start()
         {
-            _onNewGameButton.AddListener(startNewGame);
-            _onContinueButton.AddListener(ContinuePreviousgame);
+            _onNewGameButton?.AddListener(startNewGame);
+            _onContinueButton?.AddListener(ContinuePreviousgame);
         }
 
         private void startNewGame()

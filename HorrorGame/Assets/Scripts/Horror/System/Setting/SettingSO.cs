@@ -40,5 +40,19 @@ namespace Horror
             _isFullscreen = savedFile._isFullscreen;
             _currentLocale = savedFile._currentLocale;
         }
+
+        #region Setting Save
+        public void SaveLanguageSettings(Locale local)
+        {
+            _currentLocale = local;
+        }
+
+        public void SaveAudioSettings(float newMusicVolume, float newSfxVolume, float newMasterVolume)
+        {
+            _masterVolume = newMasterVolume;
+            _musicVolume = newMusicVolume;
+            _sfxVolume = newSfxVolume;
+        }
+        #endregion
     }
 }

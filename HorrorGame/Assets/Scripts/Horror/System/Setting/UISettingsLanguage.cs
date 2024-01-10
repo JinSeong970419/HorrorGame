@@ -6,6 +6,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
+using UnityEngine.Events;
 
 namespace Horror
 {
@@ -20,7 +21,8 @@ namespace Horror
         [SerializeField] private GameObject _dropDownitemPrefabs;
         [SerializeField] private GameObject scrollbar;
 
-        [Header("SETTINGS")]
+        public event UnityAction<Locale> _save = delegate { };
+
         // Lange Setting
         private int _currentSelectedOption = 0;
         private int _savedSelectedOption;
@@ -120,7 +122,8 @@ namespace Horror
                 itemButton.onClick.AddListener(Animate);
                 itemButton.onClick.AddListener(delegate
                 {
-                    OnSelectionChanged(dropDownItem.transform.GetSiblingIndex()); 
+                    OnSelectionChanged(dropDownItem.transform.GetSiblingIndex());
+                    SaveSetting();
                 });
             }
         }
@@ -134,6 +137,13 @@ namespace Horror
 
             LocalizationSettings.SelectedLocaleChanged += LocalizationSettings_SelectedLocaleChanged;
             LocalizationSettings.SelectedLocale = locale;
+        }
+
+        private void SaveSetting()
+        {
+            Locale _currentLocale = LocalizationSettings.AvailableLocales.Locales[_currentSelectedOption];
+            _savedSelectedOption = _currentSelectedOption;
+            _save.Invoke(_currentLocale);
         }
 
         public void Animate()

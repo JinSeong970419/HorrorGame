@@ -44,21 +44,21 @@ namespace Horror
     }
     public class UISettingsController : MonoBehaviour
     {
-        //[SerializeField] private UISettingsLanguageComponent _languageComponent;
+        [SerializeField] private UISettingsLanguage _languageComponent;
         //[SerializeField] private UISettingsGraphicsComponent _graphicsComponent;
-        //[SerializeField] private UISettingsAudioComponent _audioComponent;
+        [SerializeField] private UISettingsAudio _audioComponent;
         //[SerializeField] private UISettingTabsFiller _settingTabFiller = default;
-        //[SerializeField] private SettingsSO _currentSettings = default;
+        [SerializeField] private SettingSO _currentSetting;
         [SerializeField] private List<SettingsType> _settingTabsList = new List<SettingsType>();
         private SettingsType _selectedTab = SettingsType.Audio;
-        [SerializeField] private InputReader _inputReader = default;
-        [SerializeField] private GameEventVoid SaveSettingsEvent = default;
+        [SerializeField] private InputReader _inputReader;
+        [SerializeField] private GameEventVoid SaveSettingsEvent;
         public UnityAction Closed;
 
         private void OnEnable()
         {
-            //_languageComponent._save += SaveLaguageSettings;
-            //_audioComponent._save += SaveAudioSettings;
+            _languageComponent._save += SaveLaguageSettings;
+            _audioComponent._save += SaveAudioSettings;
             //_graphicsComponent._save += SaveGraphicsSettings;
 
             _inputReader.MenuCloseEvent += CloseScreen;
@@ -76,8 +76,8 @@ namespace Horror
             _inputReader.MenuCloseEvent -= CloseScreen;
             //_inputReader.TabSwitched -= SwitchTab;
 
-            //_languageComponent._save -= SaveLaguageSettings;
-            //_audioComponent._save -= SaveAudioSettings;
+            _languageComponent._save -= SaveLaguageSettings;
+            _audioComponent._save -= SaveAudioSettings;
             //_graphicsComponent._save -= SaveGraphicsSettings;
         }
 
@@ -88,27 +88,26 @@ namespace Horror
 
         private void OpenSetting(SettingsType settingType)
         {
-            //_selectedTab = settingType;
-            //switch (settingType)
-            //{
-            //    case SettingsType.Language:
-            //        _currentSettings.SaveLanguageSettings(_currentSettings.CurrentLocale);
-            //        break;
-            //    case SettingsType.Graphics:
-            //        _graphicsComponent.Setup();
-            //        break;
-            //    case SettingsType.Audio:
-            //        _audioComponent.Setup(_currentSettings.MusicVolume, _currentSettings.SfxVolume, _currentSettings.MasterVolume);
-            //        break;
-            //    default:
-            //        break;
-            //}
+            _selectedTab = settingType;
+            switch (settingType)
+            {
+                case SettingsType.Language:
+                    _currentSetting.SaveLanguageSettings(_currentSetting.CurrentLocale);
+                    break;
+                //case SettingsType.Graphics:
+                //    _graphicsComponent.Setup();
+                    break;
+                case SettingsType.Audio:
+                    _audioComponent.Setup(_currentSetting.MusicVolume, _currentSetting.SfxVolume, _currentSetting.MasterVolume);
+                    break;
+                default:
+                    break;
+            }
 
             //_languageComponent.gameObject.SetActive(settingType == SettingsType.Language);
             //_graphicsComponent.gameObject.SetActive((settingType == SettingsType.Graphics));
             //_audioComponent.gameObject.SetActive(settingType == SettingsType.Audio);
             //_settingTabFiller.SelectTab(settingType);
-
         }
 
         private void SwitchTab(float orientation)
@@ -137,20 +136,14 @@ namespace Horror
 
         public void SaveLaguageSettings(Locale local)
         {
-            //_currentSettings.SaveLanguageSettings(local);
-            //SaveSettingsEvent.RaiseEvent();
-        }
-
-        public void SaveGraphicsSettings(int newResolutionsIndex, int newAntiAliasingIndex, float newShadowDistance, bool fullscreenState)
-        {
-            //_currentSettings.SaveGraphicsSettings(newResolutionsIndex, newAntiAliasingIndex, newShadowDistance, fullscreenState);
-            //SaveSettingsEvent.RaiseEvent();
+            _currentSetting.SaveLanguageSettings(local);
+            SaveSettingsEvent.Invoke();
         }
 
         void SaveAudioSettings(float musicVolume, float sfxVolume, float masterVolume)
         {
-            //_currentSettings.SaveAudioSettings(musicVolume, sfxVolume, masterVolume);
-            //SaveSettingsEvent.RaiseEvent();
+            _currentSetting.SaveAudioSettings(musicVolume, sfxVolume, masterVolume);
+            SaveSettingsEvent.Invoke();
         }
     }
 }

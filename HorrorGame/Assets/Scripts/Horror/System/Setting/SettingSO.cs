@@ -53,6 +53,14 @@ namespace Horror
             _musicVolume = newMusicVolume;
             _sfxVolume = newSfxVolume;
         }
+
+        public void SaveGraphicsSettings(int newResolutionsIndex, int newAntiAliasingIndex, float newShadowDistance, bool fullscreenState)
+        {
+            _resolutionsIndex = newResolutionsIndex;
+            _antiAliasingIndex = newAntiAliasingIndex;
+            _shadowDistance = newShadowDistance;
+            _isFullscreen = fullscreenState;
+        }
         #endregion
     }
 }

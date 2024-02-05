@@ -53,11 +53,13 @@ namespace Horror
             {
                 _initializeOperation.Completed += InitializeCompleted;
             }
+            _dropBox.GetComponent<Button>().onClick.AddListener(Animate);
         }
 
         private void OnDisable()
         {
             LocalizationSettings.SelectedLocaleChanged -= LocalizationSettings_SelectedLocaleChanged;
+            _dropBox.GetComponent<Button>().onClick.RemoveAllListeners();
         }
 
         private void Start()
@@ -93,7 +95,7 @@ namespace Horror
                 var displayName = locales[i].Identifier.CultureInfo != null ? locales[i].Identifier.CultureInfo.NativeName : locales[i].ToString();
                 _languagesList.Add(displayName);
             }
-            _languageField.FillSettingDropDown(_languagesList.Count, _currentSelectedOption, _languagesList[_currentSelectedOption]);
+            _languageField.FillSettingDropDown(_languagesList[_currentSelectedOption]);
             _savedSelectedOption = _currentSelectedOption;
             LocalizationSettings.SelectedLocaleChanged += LocalizationSettings_SelectedLocaleChanged;
         }
@@ -102,7 +104,7 @@ namespace Horror
         {
             // 드롭다운 메인 세팅
             var selectedIndex = LocalizationSettings.AvailableLocales.Locales.IndexOf(locale);
-            _languageField.FillSettingDropDown(_languagesList.Count, selectedIndex, _languagesList[selectedIndex]);
+            _languageField.FillSettingDropDown(_languagesList[selectedIndex]);
         }
 
         private void SetupDropDownItem()
@@ -148,6 +150,9 @@ namespace Horror
 
         public void Animate()
         {
+            if(dropdownAnimator == null)
+                dropdownAnimator = _dropBox.GetComponent<Animator>();
+
             if (isOn == false)
             {
                 dropdownAnimator.Play("Dropdown In");
